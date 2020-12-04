@@ -19,6 +19,11 @@ impl Certificate {
         let pem = pem.as_ref().into();
         Self { pem }
     }
+
+    /// Get a immutable reference to underlying certificate
+    pub fn get_ref(&self) -> &[u8] {
+        &self.pem.as_slice()
+    }
 }
 
 impl Identity {
